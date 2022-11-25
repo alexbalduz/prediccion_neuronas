@@ -112,7 +112,7 @@ def main():
     #La suma ponderada es en la práctica una multiplicación de matrices
     #entre los valores en la entrada X y los distintos pesos
     #la función matmul se encarga de hacer esta multiplicación
-    sumaponderada = tf.matmul(tf_neuronas_entradas_X,peso)
+    sumaponderada = tf.compat.v1.matmul(tf_neuronas_entradas_X,peso)
 
     #Adición del sesgo a la suma ponderada
     sumaponderada = tf.add(sumaponderada,sesgo)
