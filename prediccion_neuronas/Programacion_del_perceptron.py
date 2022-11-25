@@ -18,10 +18,9 @@
 
 
 from numpy import exp, array, random
-import prediccion_neuronas.funciones as funciones 
+import prediccion_neuronas.funciones as funciones
 
 class Programacion_del_perceptron():
-
 
     def __init__(self,observaciones_entradas, predicciones, epochs, sesgo, txAprendizaje, peso):
         self.observaciones_entradas = observaciones_entradas
@@ -37,7 +36,6 @@ class Programacion_del_perceptron():
         #--------------------------------------
 
         Grafica_MSE=[]
-
 
         #--------------------------------------
         #    APRENDIZAJE
@@ -58,7 +56,7 @@ class Programacion_del_perceptron():
                 valor_esperado = self.predicciones[numObservacion][0]
 
                 #Etapa 1: Cálculo de la suma ponderada
-                valor_suma_ponderada = self.suma_ponderada(x1,w11,x2,w21,self.sesgo,wb)
+                valor_suma_ponderada = funciones.suma_ponderada(x1,w11,x2,w21,self.sesgo,wb)
 
 
                 #Etapa 2: Aplicación de la función de activación
@@ -180,3 +178,6 @@ def main():
 
     #Cantidad de épocas
     epochs = 300000
+
+    informacion = Programacion_del_perceptron(observaciones_entradas, predicciones, epochs, sesgo, txAprendizaje, peso)
+    return informacion
