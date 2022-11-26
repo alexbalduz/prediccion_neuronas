@@ -178,7 +178,7 @@ def main():
     txAprendizaje = 0.1
 
     #Cantidad de épocas
-    epochs = 300000
+    epochs = 5
 
     informacion = Programacion_del_perceptron(observaciones_entradas, predicciones, epochs, sesgo, txAprendizaje, peso)
     return informacion.aprendizaje()
